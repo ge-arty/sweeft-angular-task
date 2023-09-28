@@ -1,0 +1,9 @@
+<div class="user-details">
+  <h2>User Details</h2>
+  <app-user-profile [user]="user"></app-user-profile>
+  <h2 style="padding-top: 1rem">Friends:</h2>
+  <app-friends-table
+    [user]="user"
+    (friendSelected)="onFriendSelected($event)"
+  ></app-friends-table>
+</div>

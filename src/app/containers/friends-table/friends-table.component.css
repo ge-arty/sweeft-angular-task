@@ -1,0 +1,32 @@
+img {
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 50%;
+}
+.table-body {
+  height: 250px;
+  overflow-y: auto;
+}
+.container {
+  border: 1px solid black;
+}
+.friends-nav-btn {
+  padding: 0.5rem;
+  color: #fff;
+  background-color: #333;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.custom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.custom-col {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+}

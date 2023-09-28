@@ -1,0 +1,7 @@
+<div class="user-card">
+  <img [src]="user.profilePic" alt="User Photo" class="user-photo" />
+  <div class="user-details">
+    <p>{{ user.firstName }} {{ user.lastName }}</p>
+    <button (click)="showMore(user.id)">View More</button>
+  </div>
+</div>

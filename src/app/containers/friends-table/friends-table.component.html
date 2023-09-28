@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="custom-row">
+    <div class="custom-col">
+      <div class="table-responsive">
+        <div class="table">
+          <div class="table-header">
+            <div class="custom-row">
+              <div class="custom-col">Picture</div>
+              <div class="custom-col">First Name</div>
+              <div class="custom-col">Last Name</div>
+              <div class="custom-col">Description</div>
+              <div class="custom-col">Actions</div>
+            </div>
+          </div>
+          <div
+            appInfiniteScroll
+            [data]="friends"
+            [dataSource]="getFriendsByUserId"
+            [amountPerLoad]="6"
+            class="table-body"
+          >
+            <div class="custom-row" *ngFor="let friend of friends">
+              <div class="custom-col">
+                <img
+                  [src]="friend.profilePic"
+                  alt="Profile Picture"
+                  width="50"
+                  height="50"
+                />
+              </div>
+              <div class="custom-col">{{ friend.firstName }}</div>
+              <div class="custom-col">{{ friend.lastName }}</div>
+              <div
+                style="
+                  height: 150px;
+                  text-align: center;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                "
+                class="custom-col"
+              >
+                {{ friend.description }}
+              </div>
+              <div class="custom-col">
+                <button class="friends-nav-btn" (click)="showMore(friend.id)">
+                  View More
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

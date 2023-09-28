@@ -1,0 +1,11 @@
+<div class="app-content">
+  <h1>Users List</h1>
+  <div
+    class="main-content"
+    appInfiniteScroll
+    [data]="displayedUsers"
+    [dataSource]="getUsers"
+  >
+    <app-user *ngFor="let user of displayedUsers" [user]="user"></app-user>
+  </div>
+</div>
