@@ -1,6 +1,7 @@
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 
+// ------------ Creating reusable directive to define  Infinite Scroll Logic.
 @Directive({ selector: '[appInfiniteScroll]' })
 export class InfiniteScrollDirective {
   @Input() amountPerLoad = 20;
@@ -22,12 +23,13 @@ export class InfiniteScrollDirective {
   @HostListener('scroll', ['$event'])
   onScroll(event: Event): void {
     const element = event.target as HTMLElement;
-
+    // ------- Defining the height where scroll should call the function
     if (element.scrollTop + element.clientHeight >= element.scrollHeight) {
       this.loadMoreData();
     }
   }
 
+  // ------ Main logic to load more data by defining start and end for scroll
   private loadMoreData() {
     this.dataSource(this.start, this.end).subscribe((newItems) => {
       newItems.forEach((i) => this.data.push(i));

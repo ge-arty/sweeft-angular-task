@@ -27,6 +27,7 @@ export class FriendsTableComponent implements OnInit {
 
       this.friends = [];
 
+      //  Creating delay with Timeout.Need time to let friends array remove old data and get new one
       setTimeout(() => {
         if (this._infiniteScroll) {
           this._infiniteScroll.reloadData();
@@ -46,6 +47,7 @@ export class FriendsTableComponent implements OnInit {
 
   constructor(private _userService: UserService, private router: Router) {}
 
+  // ---- Getting user all friends with selected user id
   getFriendsByUserId = (start: number, end: number) => {
     return this._userService.getFriendsByUserId(this.user!.id, start, end);
   };
